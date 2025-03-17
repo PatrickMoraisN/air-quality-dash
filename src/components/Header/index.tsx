@@ -7,10 +7,10 @@ export function Header() {
     <S.HeaderContainer>
       <S.HeaderContent>
         <S.HeaderLogo>
-          <Wind size={32} color="#2d34f0" weight="fill" />
+          <Wind size={32} color="#2d34f0" weight="fill" data-testid="header-logo-icon" />
           <h1>Air Quality</h1>
         </S.HeaderLogo>
-        <ThemeSwitcher />
+        <ThemeSwitcher data-testid="theme-switcher" />
       </S.HeaderContent>
     </S.HeaderContainer>
   )
