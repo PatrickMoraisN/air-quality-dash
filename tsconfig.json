@@ -26,7 +26,8 @@
       "@geojson/*": ["geojson/*"],
       "@pages/*": ["pages/*"],
       "@utils/*": ["utils/*"],
-      "@types/*": ["types/*"]
+      "@types/*": ["types/*"],
+      "@layouts/*": ["layouts/*"]
     },
     "typeRoots": ["./node_modules/@types", "./src/types"]
   },
