@@ -18,8 +18,15 @@
         "name": "next"
       }
     ],
+    "baseUrl": "./src",
     "paths": {
-      "@/*": ["./src/*"]
+      "@components/*": ["components/*"],
+      "@styles/*": ["styles/*"],
+      "@context/*": ["context/*"],
+      "@geojson/*": ["geojson/*"],
+      "@pages/*": ["pages/*"],
+      "@utils/*": ["utils/*"],
+      "@types/*": ["types/*"]
     },
     "typeRoots": ["./node_modules/@types", "./src/types"]
   },
