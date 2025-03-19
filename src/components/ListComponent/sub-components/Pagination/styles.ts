@@ -3,7 +3,16 @@ import styled from 'styled-components'
 export const PaginationComponent = styled.div`
   display: flex;
   justify-content: center;
+  margin: 0 auto;
   margin-top: 2rem;
+  width: 80%;
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    font-size: 0.4rem;
+    width: 300px;
+  }
 `
 
 export const hoverStyle = {

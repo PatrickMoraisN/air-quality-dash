@@ -48,4 +48,13 @@ export const FilterTitle = styled.p`
   left: 50%;
   transform: translateX(-50%);
   top: 32%;
+
+  @media (max-width: 520px) {
+    top: 35%;
+    font-size: 12px;
+  }
+
+  @media (max-width: 425px) {
+    display: none;
+  }
 `
