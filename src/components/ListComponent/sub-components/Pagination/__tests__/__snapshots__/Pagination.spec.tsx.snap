@@ -3,7 +3,7 @@
 exports[`PaginationComponent matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-VHjGu kqHmyJ"
+    class="sc-VHjGu jpzNcw"
   >
     <nav
       aria-label="pagination"
@@ -82,7 +82,7 @@ exports[`PaginationComponent matches snapshot 1`] = `
           2
         </button>
         <button
-          aria-label="last page, page 3"
+          aria-label="page 3"
           class="chakra-button css-1ung3on"
           data-between=""
           data-group-item=""
@@ -96,6 +96,54 @@ exports[`PaginationComponent matches snapshot 1`] = `
           type="button"
         >
           3
+        </button>
+        <span
+          class="chakra-button css-hlgnym"
+          data-between=""
+          data-group-item=""
+          data-part="ellipsis"
+          data-scope="pagination"
+          dir="ltr"
+          id="pagination::r0::ellipsis:3"
+          style="--group-count: 3; --group-index: 1;"
+          type="button"
+        >
+          <svg
+            class="css-k68odi"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="1"
+            />
+            <circle
+              cx="19"
+              cy="12"
+              r="1"
+            />
+            <circle
+              cx="5"
+              cy="12"
+              r="1"
+            />
+          </svg>
+        </span>
+        <button
+          aria-label="last page, page 5"
+          class="chakra-button css-1ung3on"
+          data-between=""
+          data-group-item=""
+          data-index="5"
+          data-part="item"
+          data-scope="pagination"
+          data-testid="page-button"
+          dir="ltr"
+          id="pagination::r0::item:5"
+          style="--group-count: 3; --group-index: 1;"
+          type="button"
+        >
+          5
         </button>
         <button
           aria-label="next page"
