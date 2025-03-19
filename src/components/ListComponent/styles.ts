@@ -9,6 +9,13 @@ export const SearchForm = styled.form`
   gap: 28px;
   padding: 0 8px;
   margin: auto;
+
+  @media (max-width: 425px) {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    margin-top: 1rem;
+  }
 `
 
 export const SearchInputContainer = styled.div`
@@ -34,6 +41,10 @@ export const SearchInput = styled.input`
   @media (max-width: 768px) {
     width: 100%;
   }
+
+  @media (max-width: 425px) {
+    width: 120%;
+  }
 `
 
 export const SearchButton = styled.button`
@@ -50,6 +61,11 @@ export const SearchButton = styled.button`
   &:hover {
     filter: brightness(0.8);
   }
+
+  @media (max-width: 425px) {
+    margin-top: 10px;
+    width: 80%;
+  }
 `
 
 export const ErrorText = styled.p`
@@ -58,4 +74,6 @@ export const ErrorText = styled.p`
   margin-top: 5px;
   position: absolute;
   top: 80px;
+  left: 0;
+  text-align: left;
 `
