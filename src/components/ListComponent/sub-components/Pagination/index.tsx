@@ -1,6 +1,7 @@
 'use client'
 
 import { ButtonGroup, IconButton, Pagination } from '@chakra-ui/react'
+import { useMobile } from '@hooks/useMobile'
 import { LuChevronLeft, LuChevronRight } from 'react-icons/lu'
 import * as S from './styles'
 
@@ -23,6 +24,7 @@ export const PaginationComponent = ({
   showPagination,
 }: PaginationComponentProps) => {
   const shouldShowPagination = showPagination()
+  const [isMobile] = useMobile()
 
   if (!shouldShowPagination) {
     return null
@@ -32,25 +34,27 @@ export const PaginationComponent = ({
     <S.PaginationComponent>
       <Pagination.Root
         count={totalPages}
-        pageSize={2}
+        pageSize={1}
         defaultPage={page}
         onPageChange={onPageChange}
       >
         <ButtonGroup variant="ghost" size="sm">
-          <Pagination.PrevTrigger asChild>
-            <IconButton
-              variant="outline"
-              borderRadius="md"
-              borderColor="gray.500"
-              color="gray.600"
-              bg="transparent"
-              _hover={S.hoverStyle}
-              _active={S.activeStyle}
-              data-testid="chevron-left"
-            >
-              <LuChevronLeft />
-            </IconButton>
-          </Pagination.PrevTrigger>
+          {!isMobile && (
+            <Pagination.PrevTrigger asChild>
+              <IconButton
+                variant="outline"
+                borderRadius="md"
+                borderColor="gray.500"
+                color="gray.600"
+                bg="transparent"
+                _hover={S.hoverStyle}
+                _active={S.activeStyle}
+                data-testid="chevron-left"
+              >
+                <LuChevronLeft />
+              </IconButton>
+            </Pagination.PrevTrigger>
+          )}
           <Pagination.Items
             render={page => (
               <IconButton
@@ -69,20 +73,22 @@ export const PaginationComponent = ({
             )}
           />
 
-          <Pagination.NextTrigger asChild>
-            <IconButton
-              variant="outline"
-              borderRadius="md"
-              borderColor="gray.500"
-              color="gray.600"
-              bg="transparent"
-              _hover={S.hoverStyle}
-              _active={S.activeStyle}
-              data-testid="chevron-right"
-            >
-              <LuChevronRight />
-            </IconButton>
-          </Pagination.NextTrigger>
+          {!isMobile && (
+            <Pagination.NextTrigger asChild>
+              <IconButton
+                variant="outline"
+                borderRadius="md"
+                borderColor="gray.500"
+                color="gray.600"
+                bg="transparent"
+                _hover={S.hoverStyle}
+                _active={S.activeStyle}
+                data-testid="chevron-right"
+              >
+                <LuChevronRight />
+              </IconButton>
+            </Pagination.NextTrigger>
+          )}
         </ButtonGroup>
       </Pagination.Root>
     </S.PaginationComponent>
