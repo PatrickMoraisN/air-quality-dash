@@ -19,7 +19,7 @@ interface getTotalNeighborhoodsNumberProps {
   total: number
 }
 
-const getBairrosPaginated = async (
+const getNeighborhoodPaginated = async (
   page: number = 1,
   limit: number = 10
 ): Promise<PaginatedResponse> => {
@@ -54,15 +54,9 @@ const getNeighborhoodsFilteredPaginated = async (
   return { data: paginatedData, total }
 }
 
-const searchBairroByName = async (name: string): Promise<AirQualityData[]> => {
+const searchNeighborhoodByName = async (name: string): Promise<AirQualityData[]> => {
   const normalizedName = toTitleCase(name.trim())
   const response = await api.get(`${airQualityServiceRoutes.index}?name=${normalizedName}`)
-  return response.data
-}
-
-const filterBairrosByQuality = async (qualities: string[]): Promise<AirQualityData[]> => {
-  const query = qualities.map(q => `actual_quality=${q}`).join('&')
-  const response = await api.get(`${airQualityServiceRoutes.index}?${query}`)
   return response.data
 }
 
@@ -72,8 +66,7 @@ const getTotalNeighborhoodsNumber = async (): Promise<getTotalNeighborhoodsNumbe
 }
 
 export default {
-  getBairrosPaginated,
-  searchBairroByName,
-  filterBairrosByQuality,
+  getNeighborhoodPaginated,
+  searchNeighborhoodByName,
   getNeighborhoodsFilteredPaginated,
 }
