@@ -23,7 +23,6 @@ export const PaginationComponent = ({
   showPagination,
 }: PaginationComponentProps) => {
   const shouldShowPagination = showPagination()
-  console.log('shouldShowPagination', shouldShowPagination)
 
   if (!shouldShowPagination) {
     return null
@@ -45,16 +44,8 @@ export const PaginationComponent = ({
               borderColor="gray.500"
               color="gray.600"
               bg="transparent"
-              _hover={{
-                bg: 'gray.100',
-                color: 'gray.800',
-                _dark: { bg: 'gray.700', color: 'gray.300' },
-              }}
-              _active={{
-                bg: 'gray.600',
-                color: 'white',
-                _dark: { bg: 'gray.300', color: 'black' },
-              }}
+              _hover={S.hoverStyle}
+              _active={S.activeStyle}
               data-testid="chevron-left"
             >
               <LuChevronLeft />
@@ -68,21 +59,9 @@ export const PaginationComponent = ({
                 borderColor="gray.500"
                 color="gray.600"
                 bg="transparent"
-                _hover={{
-                  bg: 'gray.100',
-                  color: 'gray.800',
-                  _dark: { bg: 'gray.700', color: 'gray.300' },
-                }}
-                _active={{
-                  bg: 'gray.600',
-                  color: 'white',
-                  _dark: { bg: 'gray.300', color: 'black' },
-                }}
-                _selected={{
-                  bg: 'gray.600',
-                  color: 'white',
-                  _dark: { bg: 'gray.300', color: 'black' },
-                }}
+                _hover={S.hoverStyle}
+                _active={S.activeStyle}
+                _selected={S.selectedStyle}
                 data-testid="page-button"
               >
                 {page.value}
@@ -97,16 +76,8 @@ export const PaginationComponent = ({
               borderColor="gray.500"
               color="gray.600"
               bg="transparent"
-              _hover={{
-                bg: 'gray.100',
-                color: 'gray.800',
-                _dark: { bg: 'gray.700', color: 'gray.300' },
-              }}
-              _active={{
-                bg: 'gray.600',
-                color: 'white',
-                _dark: { bg: 'gray.300', color: 'black' },
-              }}
+              _hover={S.hoverStyle}
+              _active={S.activeStyle}
               data-testid="chevron-right"
             >
               <LuChevronRight />
