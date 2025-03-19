@@ -1,4 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
+import { airQualityServiceRoutes } from '../routes/airQualityService.routes'
 import { toTitleCase } from '../utils/stringsUtils'
 import { api } from './api'
 
@@ -24,7 +25,9 @@ const getBairrosPaginated = async (
 ): Promise<PaginatedResponse> => {
   const adjustedLimit = limit * page
 
-  const response = await api.get(`/bairros?_limit=${adjustedLimit}&_sort=id&_order=asc`)
+  const response = await api.get(
+    `${airQualityServiceRoutes.index}?_limit=${adjustedLimit}&_sort=id&_order=asc`
+  )
   const { total } = await getTotalNeighborhoodsNumber()
 
   const totalPages = Math.ceil(total / limit) * 2
@@ -40,7 +43,7 @@ const getNeighborhoodsFilteredPaginated = async (
   page: number = 1,
   limit: number = 10
 ): Promise<PaginatedResponse> => {
-  const totalResponse = await api.get(`/bairros?_sort=id&_order=asc`)
+  const totalResponse = await api.get(`${airQualityServiceRoutes.index}?_sort=id&_order=asc`)
   const respondeFiltered: AirQualityData[] = totalResponse.data.filter(
     (neighborhood: AirQualityData) => qualities.includes(neighborhood.actual_quality)
   )
@@ -53,18 +56,18 @@ const getNeighborhoodsFilteredPaginated = async (
 
 const searchBairroByName = async (name: string): Promise<AirQualityData[]> => {
   const normalizedName = toTitleCase(name.trim())
-  const response = await api.get(`/bairros?name=${normalizedName}`)
+  const response = await api.get(`${airQualityServiceRoutes.index}?name=${normalizedName}`)
   return response.data
 }
 
 const filterBairrosByQuality = async (qualities: string[]): Promise<AirQualityData[]> => {
   const query = qualities.map(q => `actual_quality=${q}`).join('&')
-  const response = await api.get(`/bairros?${query}`)
+  const response = await api.get(`${airQualityServiceRoutes.index}?${query}`)
   return response.data
 }
 
 const getTotalNeighborhoodsNumber = async (): Promise<getTotalNeighborhoodsNumberProps> => {
-  const response = await api.get('/bairros-total')
+  const response = await api.get(airQualityServiceRoutes.totalPages)
   return response.data
 }
 
