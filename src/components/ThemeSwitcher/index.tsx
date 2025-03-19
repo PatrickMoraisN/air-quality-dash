@@ -11,7 +11,7 @@ export const ThemeSwitcher = () => {
         {theme === 'light' ? (
           <Moon size={30} color="#FFF" data-icon="moon" data-testid="theme-icon" />
         ) : (
-          <Sun size={30} data-icon="sun" data-testid="theme-icon" />
+          <Sun size={30} data-icon="sun" color="#000" data-testid="theme-icon" />
         )}
       </S.ToggleThumb>
     </S.SwitchContainer>
