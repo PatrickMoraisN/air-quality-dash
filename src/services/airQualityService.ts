@@ -30,7 +30,7 @@ const getBairrosPaginated = async (
   )
   const { total } = await getTotalNeighborhoodsNumber()
 
-  const totalPages = Math.ceil(total / limit) * 2
+  const totalPages = Math.ceil(total / limit)
 
   const startIndex = (page - 1) * limit
   const paginatedData = response.data.slice(startIndex, startIndex + limit)
