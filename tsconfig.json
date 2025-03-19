@@ -31,7 +31,8 @@
       "@layouts/*": ["layouts/*"],
       "@services/*": ["services/*"],
       "@validations/*": ["validations/*"],
-      "@routes/*": ["routes/*"]
+      "@routes/*": ["routes/*"],
+      "@hooks/*": ["hooks/*"]
     },
     "typeRoots": ["./node_modules/@types", "./src/types"]
   },
