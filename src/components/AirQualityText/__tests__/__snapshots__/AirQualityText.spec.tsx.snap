@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AirQualityText Component matches snapshot 1`] = `
+<DocumentFragment>
+  <span
+    airquality="moderado"
+    class="sc-VHjGu ubvvV"
+  >
+    moderado
+  </span>
+</DocumentFragment>
+`;
