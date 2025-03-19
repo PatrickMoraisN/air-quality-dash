@@ -55,6 +55,7 @@ export const PaginationComponent = ({
                 color: 'white',
                 _dark: { bg: 'gray.300', color: 'black' },
               }}
+              data-testid="chevron-left"
             >
               <LuChevronLeft />
             </IconButton>
@@ -82,6 +83,7 @@ export const PaginationComponent = ({
                   color: 'white',
                   _dark: { bg: 'gray.300', color: 'black' },
                 }}
+                data-testid="page-button"
               >
                 {page.value}
               </IconButton>
@@ -105,6 +107,7 @@ export const PaginationComponent = ({
                 color: 'white',
                 _dark: { bg: 'gray.300', color: 'black' },
               }}
+              data-testid="chevron-right"
             >
               <LuChevronRight />
             </IconButton>
