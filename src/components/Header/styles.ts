@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const HeaderContainer = styled.header`
   background-color: ${({ theme }) => theme.header};
   color: ${({ theme }) => theme.text};
-  padding: 2rem 0;
+  padding: 2rem 12px;
   text-align: center;
 `
 
