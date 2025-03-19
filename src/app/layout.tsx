@@ -1,3 +1,6 @@
+import { Provider } from '../components/ui/provider'
+import { ThemeProvider } from '../context/ThemeContext'
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -5,7 +8,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Provider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </Provider>
+      </body>
     </html>
   )
 }
