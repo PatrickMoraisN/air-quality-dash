@@ -12,6 +12,10 @@ export const lightTheme = {
     stopTwo: '#014996',
     stopThree: '#489af3',
   },
+  qualityText: {
+    selected: '#B8E0D2',
+    background: '#E6E6E6',
+  },
 } as const
 
 export const darkTheme = {
@@ -27,5 +31,9 @@ export const darkTheme = {
     stopOne: '#FFF',
     stopTwo: '#FFF',
     stopThree: '#1E1E1E',
+  },
+  qualityText: {
+    selected: '#285E61',
+    background: '#2a2a2a',
   },
 } as const
