@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationComponent matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-VHjGu kqHmyJ"
+  >
+    <nav
+      aria-label="pagination"
+      class="css-0"
+      data-part="root"
+      data-scope="pagination"
+      dir="ltr"
+      id="pagination::r0:"
+    >
+      <div
+        class="chakra-group css-6l0f26"
+      >
+        <button
+          aria-label="previous page"
+          class="chakra-button css-4d6sd0"
+          data-disabled=""
+          data-first=""
+          data-group-item=""
+          data-part="prev-trigger"
+          data-scope="pagination"
+          data-testid="chevron-left"
+          dir="ltr"
+          disabled=""
+          id="pagination::r0::prev"
+          style="--group-count: 3; --group-index: 0;"
+          type="button"
+        >
+          <svg
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m15 18-6-6 6-6"
+            />
+          </svg>
+        </button>
+        <button
+          aria-current="page"
+          aria-label="page 1"
+          class="chakra-button css-1ung3on"
+          data-between=""
+          data-group-item=""
+          data-index="1"
+          data-part="item"
+          data-scope="pagination"
+          data-selected=""
+          data-testid="page-button"
+          dir="ltr"
+          id="pagination::r0::item:1"
+          style="--group-count: 3; --group-index: 1;"
+          type="button"
+        >
+          1
+        </button>
+        <button
+          aria-label="page 2"
+          class="chakra-button css-1ung3on"
+          data-between=""
+          data-group-item=""
+          data-index="2"
+          data-part="item"
+          data-scope="pagination"
+          data-testid="page-button"
+          dir="ltr"
+          id="pagination::r0::item:2"
+          style="--group-count: 3; --group-index: 1;"
+          type="button"
+        >
+          2
+        </button>
+        <button
+          aria-label="last page, page 3"
+          class="chakra-button css-1ung3on"
+          data-between=""
+          data-group-item=""
+          data-index="3"
+          data-part="item"
+          data-scope="pagination"
+          data-testid="page-button"
+          dir="ltr"
+          id="pagination::r0::item:3"
+          style="--group-count: 3; --group-index: 1;"
+          type="button"
+        >
+          3
+        </button>
+        <button
+          aria-label="next page"
+          class="chakra-button css-4d6sd0"
+          data-group-item=""
+          data-last=""
+          data-part="next-trigger"
+          data-scope="pagination"
+          data-testid="chevron-right"
+          dir="ltr"
+          id="pagination::r0::next"
+          style="--group-count: 3; --group-index: 2;"
+          type="button"
+        >
+          <svg
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m9 18 6-6-6-6"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</DocumentFragment>
+`;
