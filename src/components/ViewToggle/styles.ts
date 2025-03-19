@@ -9,6 +9,10 @@ export const ViewToggleContainer = styled.div`
     font-size: 16px;
     font-weight: bold;
     color: #787878;
+
+    @media (max-width: 420px) {
+      display: none;
+    }
   }
 `
 
@@ -32,6 +36,10 @@ export const ViewToggleButton = styled.button<ViewToggleButtonProps>`
 
   &:hover {
     filter: brightness(0.9);
+  }
+
+  @media (max-width: 420px) {
+    width: 43%;
   }
 `
 
