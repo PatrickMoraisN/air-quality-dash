@@ -30,7 +30,8 @@
       "@types/*": ["types/*"],
       "@layouts/*": ["layouts/*"],
       "@services/*": ["services/*"],
-      "@validations/*": ["validations/*"]
+      "@validations/*": ["validations/*"],
+      "@routes/*": ["routes/*"]
     },
     "typeRoots": ["./node_modules/@types", "./src/types"]
   },
