@@ -14,7 +14,7 @@ export const MapComponent = () => {
   const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false)
 
   const getNeighborhoodInfo = async (selectedNeighborhood: string) => {
-    const response = await airQualityService.searchBairroByName(selectedNeighborhood)
+    const response = await airQualityService.searchNeighborhoodByName(selectedNeighborhood)
     return response[0]
   }
 

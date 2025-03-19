@@ -37,12 +37,12 @@ export function ListComponent() {
   const [isLoading, setIsLoading] = useState(true)
 
   const handleSearch = async (data: { searchInput: string }) => {
-    const neighborhoods = await airQualityAPI.searchBairroByName(data.searchInput)
+    const neighborhoods = await airQualityAPI.searchNeighborhoodByName(data.searchInput)
     setSearchedNeighborhoods(neighborhoods)
   }
 
   const getFirstNeighborhoods = async () => {
-    const data = await airQualityAPI.getBairrosPaginated(1)
+    const data = await airQualityAPI.getNeighborhoodPaginated(1)
     setSearchedNeighborhoods(data.data)
     setTotalPages(data.total)
     setIsLoading(false)
@@ -50,7 +50,7 @@ export function ListComponent() {
 
   const onPageChange = async ({ page }: onPageChangeProps) => {
     if (!qualityFilters.length) {
-      const data = await airQualityAPI.getBairrosPaginated(page)
+      const data = await airQualityAPI.getNeighborhoodPaginated(page)
       setSearchedNeighborhoods(data.data)
       return
     }
@@ -91,7 +91,6 @@ export function ListComponent() {
   }
 
   const showPagination = useCallback(() => {
-    console.log('bizarro' + Boolean(searchedNeighborhood))
     if (Boolean(searchedNeighborhood)) {
       return searchedNeighborhood.length >= 10
     }
