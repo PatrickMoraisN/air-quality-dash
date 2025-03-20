@@ -8,7 +8,7 @@ interface AirQualityTextProps {
 
 export function AirQualityText({ airQuality, variant }: AirQualityTextProps) {
   return (
-    <S.QualityText airQuality={airQuality} variant={variant}>
+    <S.QualityText $airQuality={airQuality} variant={variant}>
       {airQuality}
     </S.QualityText>
   )

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 export type airQualityTextProps = {
-  airQuality: 'bom' | 'moderado' | 'ruim' | 'péssimo'
+  $airQuality: 'bom' | 'moderado' | 'ruim' | 'péssimo'
   variant?: 'popup'
 }
 
@@ -9,8 +9,8 @@ export const QualityText = styled.span<airQualityTextProps>`
   padding: 8px;
   border-radius: 8px;
   color: #000;
-  background: ${({ airQuality }) => {
-    switch (airQuality) {
+  background: ${({ $airQuality }) => {
+    switch ($airQuality) {
       case 'bom':
         return '#A8E6A2'
       case 'moderado':
