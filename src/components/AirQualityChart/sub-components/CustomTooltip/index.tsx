@@ -1,16 +1,7 @@
+import { TooltipProps } from 'recharts'
 import * as S from './styles'
 
-interface PayloadProps {
-  value: number
-}
-
-interface CustomToolTipProps {
-  active: boolean
-  payload: PayloadProps[]
-  label: string
-}
-
-export const CustomTooltip = ({ active, payload, label }: CustomToolTipProps) => {
+export const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>) => {
   if (!active || !payload || payload.length === 0) return <p>Qualidade</p>
 
   const qualityParser: Record<number, string> = {
@@ -23,7 +14,10 @@ export const CustomTooltip = ({ active, payload, label }: CustomToolTipProps) =>
   return (
     <S.CustomTooltipContainer>
       <p style={{ margin: 0, fontWeight: 'bold' }}>{label}</p>
-      <p style={{ margin: 0 }}>Qualidade: {qualityParser[payload[0].value]}</p>
+      <p style={{ margin: 0 }}>
+        Qualidade:{' '}
+        {payload[0].value !== undefined ? qualityParser[payload[0].value] : 'Desconhecida'}
+      </p>
     </S.CustomTooltipContainer>
   )
 }
