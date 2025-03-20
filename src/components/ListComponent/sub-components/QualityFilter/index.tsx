@@ -49,7 +49,7 @@ export function QualityFilter({
           <S.QualityButton
             key={quality}
             onClick={() => handleQualityFilter(quality)}
-            isActive={qualityFilters.includes(quality)}
+            $isActive={qualityFilters.includes(quality)}
             aria-pressed={qualityFilters.includes(quality)}
             data-quality={quality}
           >

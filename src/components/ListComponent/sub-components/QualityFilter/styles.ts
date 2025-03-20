@@ -2,7 +2,7 @@ import { fadeIn } from '@styles/global'
 import styled from 'styled-components'
 
 interface QualityButtonProps {
-  isActive: boolean
+  $isActive: boolean
 }
 
 export const QualityButton = styled.button<QualityButtonProps>`
@@ -10,8 +10,8 @@ export const QualityButton = styled.button<QualityButtonProps>`
   font-size: 0.8rem;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
-  background-color: ${({ isActive, theme }) =>
-    isActive ? theme.qualityText.selected : theme.qualityText.background};
+  background-color: ${({ $isActive, theme }) =>
+    $isActive ? theme.qualityText.selected : theme.qualityText.background};
   color: ${({ theme }) => theme.text};
   border: 1px solid #ccc;
   cursor: pointer;
