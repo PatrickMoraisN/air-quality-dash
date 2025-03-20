@@ -250,17 +250,25 @@ Testes para garantir a confiabilidade da aplicação. Os principais testes cobre
 
 -
 
-Veja o vídeo:
-[![Air Quality Dashboard](https://img.youtube.com/vi/j5Cnig9KtC4/maxresdefault.jpg)](https://www.youtube.com/watch?v=j5Cnig9KtC4)
+<h3>Veja o vídeo:</h3>
+<a href="https://www.youtube.com/watch?v=j5Cnig9KtC4" target="_blank">
+  <img src="https://img.youtube.com/vi/j5Cnig9KtC4/maxresdefault.jpg" width="400">
+</a>
 
-Veja o vídeo:
-[![Air Quality Dashboard - Vídeo 3](https://img.youtube.com/vi/8UcSAFTD2WI/maxresdefault.jpg)](https://www.youtube.com/watch?v=8UcSAFTD2WI)
+<h3>Veja o vídeo:</h3>
+<a href="https://www.youtube.com/watch?v=8UcSAFTD2WI" target="_blank">
+  <img src="https://img.youtube.com/vi/8UcSAFTD2WI/maxresdefault.jpg" width="400">
+</a>
 
-Veja o vídeo:
-[![Air Quality Dashboard - Vídeo 1](https://img.youtube.com/vi/oH1ViOkTTBs/maxresdefault.jpg)](https://www.youtube.com/watch?v=oH1ViOkTTBs)
+<h3>Veja o vídeo:</h3>
+<a href="https://www.youtube.com/watch?v=oH1ViOkTTBs" target="_blank">
+  <img src="https://img.youtube.com/vi/oH1ViOkTTBs/maxresdefault.jpg" width="400">
+</a>
 
-Veja o vídeo:
-[![Air Quality Dashboard - Vídeo 2](https://img.youtube.com/vi/4QxcomY7s4Y/maxresdefault.jpg)](https://www.youtube.com/watch?v=4QxcomY7s4Y)
+<h3>Veja o vídeo:</h3>
+<a href="https://www.youtube.com/watch?v=4QxcomY7s4Y" target="_blank">
+  <img src="https://img.youtube.com/vi/4QxcomY7s4Y/maxresdefault.jpg" width="400">
+</a>
 
 ![Mobile](./src/assets/Mobile.mp4)
 ![Mobile](./src/assets/MapaMobile.png)
