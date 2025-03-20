@@ -20,12 +20,12 @@ export const ViewToggleContainer = styled.div`
 `
 
 type ViewToggleButtonProps = {
-  isActive: boolean
+  $isActive: boolean
 }
 
 export const ViewToggleButton = styled.button<ViewToggleButtonProps>`
-  background-color: ${({ isActive }) => (isActive ? '#3A6EA5' : 'white')};
-  color: ${({ isActive }) => (isActive ? 'white' : 'black')};
+  background-color: ${({ $isActive }) => ($isActive ? '#3A6EA5' : 'white')};
+  color: ${({ $isActive }) => ($isActive ? 'white' : 'black')};
   border: 1px solid #3a6ea5;
   padding: 6px 16px;
   border-radius: 8px;

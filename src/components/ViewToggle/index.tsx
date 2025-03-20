@@ -11,11 +11,11 @@ export function ViewToggle({ setViewMode, viewMode }: ViewToggleProps) {
     <S.ViewToggleContainer>
       <p>Modo de visualização</p>
       <S.ViewToggleButtonContainer>
-        <S.ViewToggleButton onClick={() => setViewMode('map')} isActive={viewMode === 'map'}>
+        <S.ViewToggleButton onClick={() => setViewMode('map')} $isActive={viewMode === 'map'}>
           <MapPin size={16} weight="fill" />
           Mapa
         </S.ViewToggleButton>
-        <S.ViewToggleButton onClick={() => setViewMode('list')} isActive={viewMode === 'list'}>
+        <S.ViewToggleButton onClick={() => setViewMode('list')} $isActive={viewMode === 'list'}>
           <List size={16} />
           Lista
         </S.ViewToggleButton>
