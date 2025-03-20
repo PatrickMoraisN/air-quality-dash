@@ -219,4 +219,36 @@ Testes para garantir a confiabilidade da aplicação. Os principais testes cobre
 - Geração do PDF.
 - Chamadas de API.
 
-# Mídias
+# Mídias e Funcionalidades
+
+### Mapa Iterativo
+
+- Mapa Iterativo com bairros marcados por GeoJSON
+
+![Mapa Iterativo](./src/assets/MapaIterativoDesk.mp4)
+
+### Dark Mode e Light Mode
+
+- Estilos e temas globais com Styled-Components
+
+![Light Mode](./src/assets/PopupDeskLight.png)
+![Dark Mode](./src/assets/PopupDeskDark.png)
+
+### Tabela Iterativa
+
+![Tabela Iterativa](./src/assets/TabelaDesk.mp4)
+![Tabela Iterativa](./src/assets/TabelaDesk2.mp4)
+![Tabela Iterativa](./src/assets/TabelaDesk.png)
+
+### Geração de PDF da página
+
+- Gera PDF do resultado atual, incluindo filtros feitos.
+
+![PDF exemplo](./src/assets/pdfExemplo.png)
+
+### Responsividade
+
+-
+
+![Mobile](./src/assets/Mobile.mp4)
+![Mobile](./src/assets/MapaMobile.png)
