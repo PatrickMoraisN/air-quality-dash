@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+// image for src/assets/AirQuality.png
+![Descrição da imagem](./src/assets/AirQuality.png)
 
-## Getting Started
+# 📌 Índice
 
-First, run the development server:
+1. [📖 Sobre o Projeto](#-sobre-o-projeto)
+2. [🖥️ Tecnologias Utilizadas](#%EF%B8%8F-tecnologias-utilizadas)
+3. [🚀 Como Rodar o Projeto](#-como-rodar-o-projeto)
+4. [📌 Funcionalidades Principais](#-funcionalidades)
+5. [🗂️ Estrutura do Projeto](#%EF%B8%8F-estrutura-do-projeto)
+6. [📝 Decisões Técnicas](#-decisões-técnicas)
+7. [🛠️ Testes](#%EF%B8%8F-testes)
+8. [📄 Gerando PDF](#-gerando-pdf)
+9. [📷 Capturas de Tela](#-capturas-de-tela)
+10. [👨‍💻 Autor](#%EF%B8%8F-autor)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Sobre o Projeto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Air Quality Dashboard é um painel interativo permitindo monitoramento da qualidade do ar nos bairros da cidade. O projeto exibe os dados de forma clara oferecendo recursos como um mapa interativo, filtros e um histórico de medições.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Funcionalidades
 
-To learn more about Next.js, take a look at the following resources:
+🌍 Mapa Interativo: Exibe a qualidade do ar por bairro, permitindo interação com os dados.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+📊 Tabela de Dados: Lista as medições recentes organizadas de forma acessível.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🎯 Filtros: Possibilidade de filtrar por bairro e níveis de qualidade do ar.
 
-## Deploy on Vercel
+📉 Gráfico de Histórico: Mostra a variação da qualidade do ar ao longo do tempo.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📥 Download de Relatório: Opção para baixar os dados filtrados em formato PDF.
