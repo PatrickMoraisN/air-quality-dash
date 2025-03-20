@@ -5,24 +5,31 @@ import { format } from 'date-fns'
 import { useState } from 'react'
 import * as S from './styles'
 
-interface Neighborhood {
+interface QualityHistoryProps {
+  [key: string]: 'bom' | 'moderado' | 'ruim' | 'péssimo'
+}
+
+interface SelectedNeighborhood {
   name: string
-  actual_quality: 'bom' | 'moderado' | 'ruim' | 'péssimo'
+  actual_quality: string
+  history: QualityHistoryProps
 }
 
 interface NeighborhoodTableProps {
-  neighborhoods: Neighborhood[]
+  neighborhoods: SelectedNeighborhood[]
 }
 
 export function NeighborhoodTable({ neighborhoods }: NeighborhoodTableProps) {
   const [isPopupOpen, setIsPopupOpen] = useState(false)
-  const [selectedNeighborhood, setSelectedNeighborhood] = useState<Neighborhood | null>(null)
+  const [selectedNeighborhood, setSelectedNeighborhood] = useState<SelectedNeighborhood | null>(
+    null
+  )
 
   if (!neighborhoods || !neighborhoods.length) {
     return <S.ErrorText>Bairro não encontrado</S.ErrorText>
   }
 
-  const handleRowClick = (neighborhood: Neighborhood) => {
+  const handleRowClick = (neighborhood: SelectedNeighborhood) => {
     setSelectedNeighborhood(neighborhood)
     setIsPopupOpen(true)
   }
@@ -56,7 +63,7 @@ export function NeighborhoodTable({ neighborhoods }: NeighborhoodTableProps) {
       </S.NeighborhoodTable>
 
       <NeighborhoodPopup
-        selectedNeighborhood={selectedNeighborhood ?? ''}
+        selectedNeighborhood={selectedNeighborhood ?? null}
         isPopupOpen={isPopupOpen}
         closeModal={closeModal}
       />
