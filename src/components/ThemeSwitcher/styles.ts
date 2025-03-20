@@ -16,7 +16,7 @@ export const SwitchContainer = styled.button`
   animation: ${fadeLeft} 0.8s;
 `
 
-export const ToggleThumb = styled.div<{ themeMode: string }>`
+export const ToggleThumb = styled.div<{ $themeMode: string }>`
   width: 28px;
   height: 28px;
   background-color: ${({ theme }) => theme.text};
@@ -24,7 +24,7 @@ export const ToggleThumb = styled.div<{ themeMode: string }>`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: ${({ themeMode }) => (themeMode === 'light' ? '5px' : 'calc(100% - 25px)')};
+  left: ${({ $themeMode }) => ($themeMode === 'light' ? '5px' : 'calc(100% - 25px)')};
   display: flex;
   align-items: center;
   justify-content: center;

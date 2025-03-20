@@ -7,7 +7,7 @@ export const ThemeSwitcher = () => {
 
   return (
     <S.SwitchContainer onClick={toggleTheme}>
-      <S.ToggleThumb themeMode={theme}>
+      <S.ToggleThumb $themeMode={theme}>
         {theme === 'light' ? (
           <Moon size={30} color="#FFF" data-icon="moon" data-testid="theme-icon" />
         ) : (
