@@ -250,7 +250,17 @@ Testes para garantir a confiabilidade da aplicação. Os principais testes cobre
 
 -
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/j5Cnig9KtC4" frameborder="0" allowfullscreen></iframe>
+Veja o vídeo:
+[![Air Quality Dashboard](https://img.youtube.com/vi/j5Cnig9KtC4/maxresdefault.jpg)](https://www.youtube.com/watch?v=j5Cnig9KtC4)
+
+Veja o vídeo:
+[![Air Quality Dashboard - Vídeo 3](https://img.youtube.com/vi/8UcSAFTD2WI/maxresdefault.jpg)](https://www.youtube.com/watch?v=8UcSAFTD2WI)
+
+Veja o vídeo:
+[![Air Quality Dashboard - Vídeo 1](https://img.youtube.com/vi/oH1ViOkTTBs/maxresdefault.jpg)](https://www.youtube.com/watch?v=oH1ViOkTTBs)
+
+Veja o vídeo:
+[![Air Quality Dashboard - Vídeo 2](https://img.youtube.com/vi/4QxcomY7s4Y/maxresdefault.jpg)](https://www.youtube.com/watch?v=4QxcomY7s4Y)
 
 ![Mobile](./src/assets/Mobile.mp4)
 ![Mobile](./src/assets/MapaMobile.png)
