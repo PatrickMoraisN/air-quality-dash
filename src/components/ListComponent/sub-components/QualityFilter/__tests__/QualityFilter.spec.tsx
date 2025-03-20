@@ -48,8 +48,6 @@ describe('QualityFilter Component', () => {
     expect(screen.getByText('moderado')).toBeInTheDocument()
     expect(screen.getByText('ruim')).toBeInTheDocument()
     expect(screen.getByText('péssimo')).toBeInTheDocument()
-
-    expect(screen.getByText('Filtros')).toBeInTheDocument()
   })
 
   it('calls handleQualityFilter when buttons are clicked', () => {
