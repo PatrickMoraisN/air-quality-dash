@@ -1,6 +1,6 @@
 'use client'
-import airQualityService from '@services/airQualityService'
-import geoDataService from '@services/geoDataService'
+import airQualityService from '@services/airQuality/airQualityApi'
+import geoDataService from '@services/geoData/geoDataApi'
 import { BairroFeature } from '@utils/geojson/geoData.types'
 import { FeatureCollection } from 'geojson'
 import 'leaflet/dist/leaflet.css'
