@@ -3,6 +3,7 @@ import airQualityAPI from '@services/airQuality'
 import { searchSchema, SearchSchemaType } from '@validations/searchSchema'
 import { useCallback, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { DownloadPdf } from '../DownloadPdf'
 import * as S from './styles'
 import { NeighborhoodTable } from './sub-components/NeighborhoodTable'
 import { PaginationComponent } from './sub-components/Pagination'
@@ -146,6 +147,8 @@ export function ListComponent() {
       {showPagination() && (
         <PaginationComponent totalPages={totalPages} onPageChange={onPageChange} />
       )}
+
+      {searchedNeighborhood && <DownloadPdf neighborhoods={searchedNeighborhood} />}
     </>
   )
 }
