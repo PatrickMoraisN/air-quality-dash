@@ -8,21 +8,31 @@ import { NeighborhoodTable } from './sub-components/NeighborhoodTable'
 import { PaginationComponent } from './sub-components/Pagination'
 import { QualityFilter } from './sub-components/QualityFilter'
 
-interface searchedNeighborhoodProps {
-  name: string
-  actual_quality: string
+type QualityFiltersTypes = 'bom' | 'moderado' | 'ruim' | 'péssimo'
+
+interface QualityHistoryProps {
+  [key: string]: QualityFiltersTypes
 }
 
-interface onPageChangeProps {
+interface SearchedNeighborhoodProps {
+  name: string
+  actual_quality: string
+  history: QualityHistoryProps
+}
+
+interface OnPageChangeProps {
   page: number
   pageSize: number
 }
 
-type QualityFiltersTypes = 'bom' | 'moderado' | 'ruim' | 'péssimo'
+interface FilterByQualityProps {
+  qualityFilters: QualityFiltersTypes[]
+  page?: number
+}
 
 export function ListComponent() {
   const [searchedNeighborhood, setSearchedNeighborhoods] = useState<
-    searchedNeighborhoodProps[] | null
+    SearchedNeighborhoodProps[] | null
   >(null)
   const [totalPages, setTotalPages] = useState<number>(0)
   const {
@@ -48,7 +58,7 @@ export function ListComponent() {
     setIsLoading(false)
   }
 
-  const onPageChange = async ({ page }: onPageChangeProps) => {
+  const onPageChange = async ({ page }: OnPageChangeProps) => {
     if (!qualityFilters.length) {
       const data = await airQualityAPI.getNeighborhoodPaginated(page)
       setSearchedNeighborhoods(data.data)
@@ -81,7 +91,7 @@ export function ListComponent() {
     filterByQuality({ qualityFilters: qualityFiltersArray })
   }
 
-  const filterByQuality = async ({ qualityFilters, page = 1 }: QualityFiltersTypes[]) => {
+  const filterByQuality = async ({ qualityFilters, page = 1 }: FilterByQualityProps) => {
     const neighborhoodsFiltered = await airQualityAPI.getNeighborhoodsFilteredPaginated(
       qualityFilters,
       page
@@ -92,9 +102,13 @@ export function ListComponent() {
 
   const showPagination = useCallback(() => {
     if (Boolean(searchedNeighborhood)) {
-      return searchedNeighborhood.length >= 10
+      return searchedNeighborhood!.length >= 10
     }
     return false
+  }, [searchedNeighborhood])
+
+  const showQualityFilters = useCallback(() => {
+    return Boolean(searchedNeighborhood) && searchedNeighborhood!.length >= 1
   }, [searchedNeighborhood])
 
   useEffect(() => {
@@ -118,14 +132,14 @@ export function ListComponent() {
         </S.SearchInputContainer>
         <S.SearchButton type="submit">Buscar</S.SearchButton>
       </S.SearchForm>
-      <QualityFilter handleQualityFilter={handleQualityFilter} qualityFilters={qualityFilters} />
+      {showQualityFilters() && (
+        <QualityFilter handleQualityFilter={handleQualityFilter} qualityFilters={qualityFilters} />
+      )}
       {searchedNeighborhood && <NeighborhoodTable neighborhoods={searchedNeighborhood} />}
 
-      <PaginationComponent
-        totalPages={totalPages}
-        onPageChange={onPageChange}
-        showPagination={showPagination}
-      />
+      {showPagination() && (
+        <PaginationComponent totalPages={totalPages} onPageChange={onPageChange} />
+      )}
     </>
   )
 }
