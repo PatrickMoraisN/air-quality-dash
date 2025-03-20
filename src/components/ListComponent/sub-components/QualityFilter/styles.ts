@@ -1,3 +1,4 @@
+import { fadeIn } from '@styles/global'
 import styled from 'styled-components'
 
 interface QualityButtonProps {
@@ -38,4 +39,6 @@ export const FilterContainer = styled.div`
   @media (max-width: 768px) {
     gap: 4px;
   }
+
+  animation: ${fadeIn} 0.8s;
 `

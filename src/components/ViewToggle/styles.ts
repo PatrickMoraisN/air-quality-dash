@@ -1,3 +1,4 @@
+import { fadeIn } from '@styles/global'
 import styled from 'styled-components'
 
 export const ViewToggleContainer = styled.div`
@@ -14,6 +15,8 @@ export const ViewToggleContainer = styled.div`
       display: none;
     }
   }
+
+  animation: ${fadeIn} 0.8s;
 `
 
 type ViewToggleButtonProps = {

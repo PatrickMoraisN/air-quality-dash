@@ -1,3 +1,4 @@
+import { fadeIn } from '@styles/global'
 import styled from 'styled-components'
 
 export const SearchForm = styled.form`
@@ -16,6 +17,8 @@ export const SearchForm = styled.form`
     gap: 0px;
     margin-top: 1rem;
   }
+
+  animation: ${fadeIn} 0.8s;
 `
 
 export const SearchInputContainer = styled.div`

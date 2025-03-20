@@ -1,3 +1,4 @@
+import { fadeIn } from '@styles/global'
 import styled, { css } from 'styled-components'
 
 export const ErrorText = styled.p`
@@ -31,6 +32,8 @@ export const TableContainer = styled.div`
   &::-webkit-scrollbar-thumb:hover {
     background: #909090;
   }
+
+  animation: ${fadeIn} 0.8s;
 `
 
 export const NeighborhoodTable = styled.table`

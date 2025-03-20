@@ -1,8 +1,11 @@
+import { fadeIn } from '@styles/global'
 import { MapContainer } from 'react-leaflet'
 import styled from 'styled-components'
 
 export const MapContent = styled.div`
   margin-top: 6rem;
+
+  animation: ${fadeIn} 0.8s;
 `
 
 export const MapElement = styled(MapContainer)`
