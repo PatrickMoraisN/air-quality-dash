@@ -15,7 +15,7 @@
    - Estrutura de Pastas
    - Decisões de implementação
 6. [📷 Mídias e Funcionalidades](#mídias)
-7. [👨‍💻 Autor](#%EF%B8%8F-autor)
+7. [Autor](#closed_book-autor)
 
 ---
 
@@ -225,7 +225,10 @@ Testes para garantir a confiabilidade da aplicação. Os principais testes cobre
 
 - Mapa Iterativo com bairros marcados por GeoJSON
 
-![Mapa Iterativo](./src/assets/MapaIterativoDesk.mp4)
+<h5>Veja o vídeo abaixo:</h5>
+<a href="https://www.youtube.com/watch?v=j5Cnig9KtC4" target="_blank">
+  <img src="https://img.youtube.com/vi/j5Cnig9KtC4/maxresdefault.jpg" width="400">
+</a>
 
 ### Dark Mode e Light Mode
 
@@ -236,9 +239,16 @@ Testes para garantir a confiabilidade da aplicação. Os principais testes cobre
 
 ### Tabela Iterativa
 
-![Tabela Iterativa](./src/assets/TabelaDesk.mp4)
-![Tabela Iterativa](./src/assets/TabelaDesk2.mp4)
 ![Tabela Iterativa](./src/assets/TabelaDesk.png)
+
+<h5>Veja os vídeos da tabela iterativa abaixo:</h5>
+<a href="https://www.youtube.com/watch?v=oH1ViOkTTBs" target="_blank">
+  <img src="https://img.youtube.com/vi/oH1ViOkTTBs/maxresdefault.jpg" width="400">
+</a>
+
+<a href="https://www.youtube.com/watch?v=4QxcomY7s4Y" target="_blank">
+  <img src="https://img.youtube.com/vi/4QxcomY7s4Y/maxresdefault.jpg" width="400">
+</a>
 
 ### Geração de PDF da página
 
@@ -248,27 +258,18 @@ Testes para garantir a confiabilidade da aplicação. Os principais testes cobre
 
 ### Responsividade
 
--
-
-<h3>Veja o vídeo:</h3>
-<a href="https://www.youtube.com/watch?v=j5Cnig9KtC4" target="_blank">
-  <img src="https://img.youtube.com/vi/j5Cnig9KtC4/maxresdefault.jpg" width="400">
-</a>
-
-<h3>Veja o vídeo:</h3>
-<a href="https://www.youtube.com/watch?v=8UcSAFTD2WI" target="_blank">
-  <img src="https://img.youtube.com/vi/8UcSAFTD2WI/maxresdefault.jpg" width="400">
-</a>
-
-<h3>Veja o vídeo:</h3>
-<a href="https://www.youtube.com/watch?v=oH1ViOkTTBs" target="_blank">
-  <img src="https://img.youtube.com/vi/oH1ViOkTTBs/maxresdefault.jpg" width="400">
-</a>
-
-<h3>Veja o vídeo:</h3>
-<a href="https://www.youtube.com/watch?v=4QxcomY7s4Y" target="_blank">
-  <img src="https://img.youtube.com/vi/4QxcomY7s4Y/maxresdefault.jpg" width="400">
-</a>
-
-![Mobile](./src/assets/Mobile.mp4)
 ![Mobile](./src/assets/MapaMobile.png)
+
+<h3>Veja o vídeo mostrando responsividade abaixo:</h3>
+<a href="https://www.youtube.com/watch?v=8UcSAFTD2WI" target="_blank">
+  <img src="./src/assets/mob3.png" width="400">
+</a>
+
+---
+
+# :closed_book: Autor
+
+Patrick Morais <br>
+[![Linkedin Badge](https://img.shields.io/badge/-Linkedin-6633cc?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/patrick-morais/)](https://www.linkedin.com/in/patrick-morais/)<br>
+[![Gmail Badge](https://img.shields.io/badge/-ppternunes@gmail.com-6633cc?style=flat-square&logo=Gmail&logoColor=white&link=mailto:ppternunes@gmail.com)](mailto:ppternunes@gmail.com)<br>
+[![GitHub Badge](https://img.shields.io/badge/-Patrick%20Morais-6633cc?style=flat-square&logo=github&logoColor=white)](https://www.github.com/patrickmoraisn/)
