@@ -45,28 +45,12 @@ const getNeighborhoodsFilteredPaginated = async (
   return { data, total }
 }
 
-const getGeneralNeighborhoodsByName = async (name: string): Promise<{ data: AirQualityData[] }> => {
-  const normalizedName = normalizeSearchTerm(name)
-  const response = await api.get(createSortedUrl(airQualityApiRoutes.index))
-
-  const filteredData = response.data.filter((neighborhood: AirQualityData) =>
-    neighborhood.name.toLowerCase().includes(normalizedName.toLowerCase())
-  )
-
-  return { data: filteredData }
-}
-
 const searchNeighborhoodByName = async (name: string): Promise<AirQualityData[]> => {
-  const normalizedName = normalizeSearchTerm(name)
+  const normalizedName = normalizeSearchTerm(name).toLowerCase()
 
-  const exactResponse = await api.get(`${airQualityApiRoutes.index}?name=${normalizedName}`)
+  const response = await api.get<AirQualityData[]>(createSortedUrl(airQualityApiRoutes.index))
 
-  if (exactResponse.data.length === 0) {
-    const { data } = await getGeneralNeighborhoodsByName(normalizedName)
-    return data
-  }
-
-  return exactResponse.data
+  return response.data.filter(n => n.name.toLowerCase().includes(normalizedName))
 }
 
 const getTotalNeighborhoodsNumber = async (): Promise<GetTotalNeighborhoodsNumberProps> => {
