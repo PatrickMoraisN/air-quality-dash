@@ -1,9 +1,9 @@
 import { ChakraProvider, defaultSystem } from '@chakra-ui/react'
-import airQualityAPI from '@services/airQualityService'
+import airQualityAPI from '@services/airQuality'
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { ListComponent } from '..'
 
-jest.mock('@services/airQualityService', () => ({
+jest.mock('@services/airQuality', () => ({
   searchNeighborhoodByName: jest.fn(),
   getNeighborhoodPaginated: jest.fn(),
   getNeighborhoodsFilteredPaginated: jest.fn(),
