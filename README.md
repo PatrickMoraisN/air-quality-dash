@@ -1,4 +1,3 @@
-// image for src/assets/AirQuality.png
 ![Descrição da imagem](./src/assets/AirQuality.png)
 
 # 📌 Índice
@@ -16,7 +15,7 @@
 
 ---
 
-## Sobre o Projeto
+# Sobre o Projeto
 
 Air Quality Dashboard é um painel interativo permitindo monitoramento da qualidade do ar nos bairros da cidade. O projeto exibe os dados de forma clara oferecendo recursos como um mapa interativo, filtros e um histórico de medições.
 
