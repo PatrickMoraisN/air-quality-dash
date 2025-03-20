@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import airQualityAPI from '@services/airQualityService'
+import airQualityAPI from '@services/airQuality'
 import { searchSchema, SearchSchemaType } from '@validations/searchSchema'
 import { useCallback, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -73,22 +73,26 @@ export function ListComponent() {
 
   const handleQualityFilter = (quality: QualityFiltersTypes) => {
     clearSearchInput()
-    let qualityFiltersArray = [...qualityFilters]
-    if (qualityFilters.length === 1 && qualityFilters[0] === quality) {
-      setQualityFilters([])
-      getFirstNeighborhoods()
-      return
-    }
-    if (qualityFilters.includes(quality)) {
-      const qualifyFiltered = qualityFilters.filter(filter => filter !== quality)
-      setQualityFilters(qualifyFiltered)
-      qualityFiltersArray = qualifyFiltered
-    } else {
-      const qualifyFiltered = [...qualityFilters, quality]
-      setQualityFilters(qualifyFiltered)
-      qualityFiltersArray = qualifyFiltered
-    }
-    filterByQuality({ qualityFilters: qualityFiltersArray })
+
+    setQualityFilters(prevFilters => {
+      const isAlreadySelected = prevFilters.includes(quality)
+      const isOnlyFilterSelected = prevFilters.length === 1 && isAlreadySelected
+
+      if (isOnlyFilterSelected) {
+        getFirstNeighborhoods()
+        return []
+      }
+
+      if (isAlreadySelected) {
+        const updatedFilters = prevFilters.filter(filter => filter !== quality)
+        filterByQuality({ qualityFilters: updatedFilters })
+        return updatedFilters
+      }
+
+      const updatedFilters = [...prevFilters, quality]
+      filterByQuality({ qualityFilters: updatedFilters })
+      return updatedFilters
+    })
   }
 
   const filterByQuality = async ({ qualityFilters, page = 1 }: FilterByQualityProps) => {
