@@ -1,3 +1,4 @@
+import { fadeLeft } from '@styles/global'
 import styled from 'styled-components'
 
 export const SwitchContainer = styled.button`
@@ -11,6 +12,8 @@ export const SwitchContainer = styled.button`
   align-items: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
+
+  animation: ${fadeLeft} 0.8s;
 `
 
 export const ToggleThumb = styled.div<{ themeMode: string }>`

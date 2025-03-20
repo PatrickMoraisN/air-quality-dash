@@ -1,3 +1,4 @@
+import { fadeRight } from '@styles/global'
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
@@ -25,4 +26,6 @@ export const HeaderLogo = styled.div`
     font-size: 1.5rem;
     font-style: italic;
   }
+
+  animation: ${fadeRight} 0.8s;
 `
