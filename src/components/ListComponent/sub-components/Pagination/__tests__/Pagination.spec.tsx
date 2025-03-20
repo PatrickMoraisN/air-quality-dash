@@ -8,7 +8,6 @@ const customRender = (ui: React.ReactElement) => {
 
 describe('PaginationComponent', () => {
   const mockOnPageChange = jest.fn()
-  const showPaginationMock = jest.fn(() => true)
 
   afterEach(() => {
     jest.clearAllMocks()
@@ -19,54 +18,20 @@ describe('PaginationComponent', () => {
 
   it('matches snapshot', () => {
     const { asFragment } = customRender(
-      <PaginationComponent
-        totalPages={5}
-        page={1}
-        onPageChange={mockOnPageChange}
-        showPagination={showPaginationMock}
-      />
+      <PaginationComponent totalPages={5} page={1} onPageChange={mockOnPageChange} />
     )
     expect(asFragment()).toMatchSnapshot()
   })
 
   it('renders correctly when showPagination is true', () => {
-    customRender(
-      <PaginationComponent
-        totalPages={5}
-        page={1}
-        onPageChange={mockOnPageChange}
-        showPagination={showPaginationMock}
-      />
-    )
+    customRender(<PaginationComponent totalPages={5} page={1} onPageChange={mockOnPageChange} />)
 
     expect(screen.getByTestId(leftButtonTestId)).toBeInTheDocument()
     expect(screen.getByTestId(rightButtonTestId)).toBeInTheDocument()
   })
 
-  it('does not render when showPagination is false', () => {
-    showPaginationMock.mockReturnValueOnce(false)
-
-    const { container } = customRender(
-      <PaginationComponent
-        totalPages={5}
-        page={1}
-        onPageChange={mockOnPageChange}
-        showPagination={showPaginationMock}
-      />
-    )
-
-    expect(container.firstChild).toBeNull()
-  })
-
   it('calls onPageChange when next page button is clicked', () => {
-    customRender(
-      <PaginationComponent
-        totalPages={5}
-        page={1}
-        onPageChange={mockOnPageChange}
-        showPagination={showPaginationMock}
-      />
-    )
+    customRender(<PaginationComponent totalPages={5} page={1} onPageChange={mockOnPageChange} />)
 
     const nextButton = screen.getByTestId(rightButtonTestId)
     fireEvent.click(nextButton)
@@ -77,14 +42,7 @@ describe('PaginationComponent', () => {
   })
 
   it('calls onPageChange when previous page button is clicked', () => {
-    customRender(
-      <PaginationComponent
-        totalPages={5}
-        page={2}
-        onPageChange={mockOnPageChange}
-        showPagination={showPaginationMock}
-      />
-    )
+    customRender(<PaginationComponent totalPages={5} page={2} onPageChange={mockOnPageChange} />)
 
     const prevButton = screen.getByTestId(leftButtonTestId)
     fireEvent.click(prevButton)
