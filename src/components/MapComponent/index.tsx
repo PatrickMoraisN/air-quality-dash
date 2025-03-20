@@ -1,24 +1,45 @@
 'use client'
-import { BairroFeature } from '@types/geoData.types'
-import { geoData } from '@utils/geojson/geoData'
+import airQualityService from '@services/airQualityService'
+import geoDataService from '@services/geoDataService'
+import { BairroFeature } from '@utils/geojson/geoData.types'
+import { FeatureCollection } from 'geojson'
 import 'leaflet/dist/leaflet.css'
-import { useState } from 'react'
-import type { Layer } from 'react-leaflet'
+import { useEffect, useState } from 'react'
 import { GeoJSON, TileLayer } from 'react-leaflet'
-import airQualityService from '../../services/airQualityService'
 import { NeighborhoodPopup } from '../NeighborhoodPopup'
 import * as S from './styles'
 
-export const MapComponent = () => {
-  const [selectedNeighborhood, setSelectedNeighborhood] = useState<string | null>(null)
-  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false)
+interface QualityHistoryProps {
+  [key: string]: 'bom' | 'moderado' | 'ruim' | 'péssimo'
+}
 
-  const getNeighborhoodInfo = async (selectedNeighborhood: string) => {
-    const response = await airQualityService.searchNeighborhoodByName(selectedNeighborhood)
+interface SelectedNeighborhoodProps {
+  name: string
+  actual_quality: string
+  history: QualityHistoryProps
+}
+
+type LayerProps = { on: (arg0: { click: () => Promise<void> }) => void }
+
+export const MapComponent = () => {
+  const [selectedNeighborhood, setSelectedNeighborhood] =
+    useState<SelectedNeighborhoodProps | null>(null)
+  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false)
+  const [geoData, setGeoData] = useState<FeatureCollection | null>(null)
+  const [isLoading, setIsLoading] = useState<boolean>(true)
+
+  const getGeoData = async () => {
+    const response = await geoDataService.getGeoDataJSON()
+    setGeoData(response as FeatureCollection)
+    setIsLoading(false)
+  }
+
+  const getNeighborhoodInfo = async (selectedNeighborhoodName: string) => {
+    const response = await airQualityService.searchNeighborhoodByName(selectedNeighborhoodName)
     return response[0]
   }
 
-  const onEachFeature = async (feature: BairroFeature, layer: Layer) => {
+  const onEachFeature = async (feature: BairroFeature, layer: LayerProps) => {
     if (feature.properties && feature.properties.NOME) {
       layer.on({
         click: async () => {
@@ -38,15 +59,23 @@ export const MapComponent = () => {
 
   const mapCenter = [-22.9068, -43.1729] as [number, number]
 
+  useEffect(() => {
+    getGeoData()
+  }, [])
+
+  if (isLoading) {
+    return <h2>Carregando..</h2>
+  }
+
   return (
     <S.MapContent>
       <S.MapElement center={mapCenter} zoom={11} style={{ height: '500px', width: '100%' }}>
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        <GeoJSON data={geoData} onEachFeature={onEachFeature} />
+        {geoData ? <GeoJSON data={geoData} onEachFeature={onEachFeature} /> : null}
       </S.MapElement>
 
       <NeighborhoodPopup
-        selectedNeighborhood={selectedNeighborhood ?? ''}
+        selectedNeighborhood={selectedNeighborhood ?? null}
         isPopupOpen={isPopupOpen}
         closeModal={closeModal}
       />

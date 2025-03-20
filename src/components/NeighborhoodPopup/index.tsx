@@ -15,7 +15,7 @@ interface SelectedNeighborhood {
 }
 
 interface NeighborhoodPopupProps {
-  selectedNeighborhood: SelectedNeighborhood
+  selectedNeighborhood: SelectedNeighborhood | null
   isPopupOpen: boolean
   closeModal: () => void
 }
@@ -35,10 +35,10 @@ export function NeighborhoodPopup({
             <S.CloseBtn size="sm" />
           </Dialog.CloseTrigger>
           <DialogBody>
-            <S.DialogHeader>{selectedNeighborhood.name}</S.DialogHeader>
+            <S.DialogHeader>{selectedNeighborhood?.name}</S.DialogHeader>
             <S.DialogText>A qualidade do ar atual é:</S.DialogText>
             <AirQualityText
-              airQuality={selectedNeighborhood.actual_quality as AirQualityTextType}
+              airQuality={selectedNeighborhood?.actual_quality as AirQualityTextType}
               variant="popup"
             />
             <S.RecentMeasurementsText>Medições recentes:</S.RecentMeasurementsText>
