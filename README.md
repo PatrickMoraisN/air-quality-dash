@@ -14,8 +14,8 @@
 5. [🗂️ Estrutura do Projeto](#estrutura-do-projeto)
    - Estrutura de Pastas
    - Decisões de implementação
-6. [📷 Mídias e Funcionalidades](#mídias)
-7. [Autor](#closed_book-autor)
+6. [📷 Mídias e Funcionalidades](#mídias-e-funcionalidades)
+7. [📕 Autor](#closed_book-autor)
 
 ---
 
@@ -27,7 +27,7 @@ Air Quality Dashboard é um painel interativo permitindo monitoramento da qualid
 
 ---
 
-## Funcionalidades
+# Funcionalidades
 
 🌍 <b>Mapa Interativo:</b> Exibe a qualidade do ar por bairro, permitindo interação com os bairros.
 
@@ -78,6 +78,8 @@ Esse projeto utiliza a versão `20.19.0` do Node, como está especificado no `.n
 
 `npm` ou `yarn`
 
+---
+
 ### 📦 Instalação
 
 1 - Clone este repositório:
@@ -104,6 +106,8 @@ nvm use
 npm i
 ```
 
+---
+
 ### ▶️ Rodando o Projeto
 
 1 - Inicie o JSON SERVER para simular a API:
@@ -123,6 +127,8 @@ Pronto!
 O projeto estará rodando em: http://localhost:3000/
 
 O servidor estará rodando em: http://localhost:3001
+
+---
 
 #### Rotas do json-server:
 
