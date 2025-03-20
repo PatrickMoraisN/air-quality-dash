@@ -127,6 +127,7 @@ O servidor estará rodando em: http://localhost:3001
 #### Rotas do json-server:
 
 `/bairros` - retorna todos os bairros. Paginação é feita no cliente.
+
 `/bairros-total` - retorna o total dos items, devidos as limitações do json-server.
 
 <br />
@@ -230,12 +231,16 @@ Testes para garantir a confiabilidade da aplicação. Os principais testes cobre
   <img src="https://img.youtube.com/vi/j5Cnig9KtC4/maxresdefault.jpg" width="400">
 </a>
 
+---
+
 ### Dark Mode e Light Mode
 
 - Estilos e temas globais com Styled-Components
 
-![Light Mode](./src/assets/PopupDeskLight.png)
-![Dark Mode](./src/assets/PopupDeskDark.png)
+<img src="./src/assets/PopupDeskLight.png" alt="Light Mode" width="600">
+<img src="./src/assets/PopupDeskDark.png" alt="Dark Mode" width="600">
+
+---
 
 ### Tabela Iterativa
 
@@ -250,17 +255,21 @@ Testes para garantir a confiabilidade da aplicação. Os principais testes cobre
   <img src="https://img.youtube.com/vi/4QxcomY7s4Y/maxresdefault.jpg" width="400">
 </a>
 
+---
+
 ### Geração de PDF da página
 
 - Gera PDF do resultado atual, incluindo filtros feitos.
 
 ![PDF exemplo](./src/assets/pdfExemplo.png)
 
+---
+
 ### Responsividade
 
 ![Mobile](./src/assets/MapaMobile.png)
 
-<h3>Veja o vídeo mostrando responsividade abaixo:</h3>
+<h3>Veja o vídeo abaixo:</h3>
 <a href="https://www.youtube.com/watch?v=8UcSAFTD2WI" target="_blank">
   <img src="./src/assets/mob3.png" width="400">
 </a>
