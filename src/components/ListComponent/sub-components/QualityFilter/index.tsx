@@ -44,7 +44,6 @@ export function QualityFilter({
 
   return (
     <>
-      <S.FilterTitle>Filtros</S.FilterTitle>
       <S.FilterContainer aria-label="Filtros de qualidade do ar">
         {qualityLevels.map(quality => (
           <S.QualityButton
