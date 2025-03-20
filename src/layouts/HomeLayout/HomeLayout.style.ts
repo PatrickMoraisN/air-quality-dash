@@ -1,3 +1,4 @@
+import { fadeIn } from '@styles/global'
 import styled from 'styled-components'
 
 export const HomeLayoutContainer = styled.div`
@@ -10,4 +11,6 @@ export const PrincipalText = styled.h2`
   margin-top: 48px;
   font-size: 1.5rem;
   font-style: italic;
+
+  animation: ${fadeIn} 0.8s;
 `
