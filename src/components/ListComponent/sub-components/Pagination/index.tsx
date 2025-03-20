@@ -14,21 +14,14 @@ interface PaginationComponentProps {
   totalPages: number
   page?: number
   onPageChange: (page: onPageChangeProps) => void
-  showPagination: () => boolean
 }
 
 export const PaginationComponent = ({
   totalPages,
   page = 1,
   onPageChange,
-  showPagination,
 }: PaginationComponentProps) => {
-  const shouldShowPagination = showPagination()
   const [isMobile] = useMobile()
-
-  if (!shouldShowPagination) {
-    return null
-  }
 
   return (
     <S.PaginationComponent>
