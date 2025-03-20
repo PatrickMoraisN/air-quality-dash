@@ -1080,7 +1080,7 @@
     },
     {
       "id": 99,
-      "name": "Freguesia (Ilha)",
+      "name": "Freguesia Ilha",
       "actual_quality": "bom",
       "history": {
         "2025-03-17T21:34:20-03:00": "ruim",
@@ -1333,7 +1333,7 @@
     },
     {
       "id": 122,
-      "name": "Freguesia (Jacarepaguá)",
+      "name": "Freguesia Jacarepaguá",
       "actual_quality": "bom",
       "history": {
         "2025-03-17T21:34:20-03:00": "péssimo",
