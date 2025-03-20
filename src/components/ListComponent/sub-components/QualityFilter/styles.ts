@@ -39,22 +39,3 @@ export const FilterContainer = styled.div`
     gap: 4px;
   }
 `
-
-export const FilterTitle = styled.p`
-  font-size: 16px;
-  font-weight: bold;
-  color: #787878;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 32%;
-
-  @media (max-width: 520px) {
-    top: 35%;
-    font-size: 12px;
-  }
-
-  @media (max-width: 425px) {
-    display: none;
-  }
-`
