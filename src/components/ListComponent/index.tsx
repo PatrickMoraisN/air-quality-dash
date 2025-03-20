@@ -47,16 +47,18 @@ export function ListComponent() {
   const [isLoading, setIsLoading] = useState(true)
 
   const handleSearch = async (data: { searchInput: string }) => {
+    setIsLoading(true)
     const neighborhoods = await airQualityAPI.searchNeighborhoodByName(data.searchInput)
     setSearchedNeighborhoods(neighborhoods)
+    setIsLoading(false)
   }
 
-  const getFirstNeighborhoods = async () => {
+  const getFirstNeighborhoods = useCallback(async () => {
     const data = await airQualityAPI.getNeighborhoodPaginated(1)
     setSearchedNeighborhoods(data.data)
     setTotalPages(data.total)
     setIsLoading(false)
-  }
+  }, [])
 
   const onPageChange = async ({ page }: OnPageChangeProps) => {
     if (!qualityFilters.length) {
@@ -117,7 +119,7 @@ export function ListComponent() {
 
   useEffect(() => {
     getFirstNeighborhoods()
-  }, [])
+  }, [getFirstNeighborhoods])
 
   if (isLoading) {
     return <p>Carregando...</p>
