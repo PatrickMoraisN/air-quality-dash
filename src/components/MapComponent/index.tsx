@@ -7,6 +7,7 @@ import 'leaflet/dist/leaflet.css'
 import { useEffect, useState } from 'react'
 import { GeoJSON, TileLayer } from 'react-leaflet'
 import { NeighborhoodPopup } from '../NeighborhoodPopup'
+import { SkeletonComponent } from '../Skeleton'
 import * as S from './styles'
 
 interface QualityHistoryProps {
@@ -64,12 +65,16 @@ export const MapComponent = () => {
   }, [])
 
   if (isLoading) {
-    return <h2>Carregando..</h2>
+    return (
+      <S.MapSkeletonContainer>
+        <SkeletonComponent height="400px" width="600px" />
+      </S.MapSkeletonContainer>
+    )
   }
 
   return (
     <S.MapContent>
-      <S.MapElement center={mapCenter} zoom={11} style={{ height: '500px', width: '100%' }}>
+      <S.MapElement center={mapCenter} zoom={11}>
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         {geoData ? <GeoJSON data={geoData} onEachFeature={onEachFeature} /> : null}
       </S.MapElement>
