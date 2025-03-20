@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 import { airQualityApiRoutes } from '@routes/airQualityApi.routes'
 import { createSortedUrl } from '@utils/pagination'
-import { normalizeSearchTerm } from '@utils/stringsUtils'
+import { normalizeSearchTerm } from '@utils/strings'
 import { api } from '../common/api'
 import { transformPaginatedResponse } from './transformers'
 import { AirQualityData, GetTotalNeighborhoodsNumberProps, PaginatedResponse } from './types'
