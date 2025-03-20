@@ -17,6 +17,7 @@ const customJestConfig = {
     '^@services/(.*)$': '<rootDir>/src/services/$1',
     '^.+\\.(css|scss|sass)$': 'identity-obj-proxy',
   },
+  transformIgnorePatterns: ['/node_modules/(?!@react-pdf)'],
 }
 
 module.exports = createJestConfig(customJestConfig)
