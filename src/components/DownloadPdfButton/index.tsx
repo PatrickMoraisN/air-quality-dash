@@ -17,7 +17,7 @@ interface DownloadPdfProps {
   neighborhoods: SearchedNeighborhoodProps[]
 }
 
-export const DownloadPdf = ({ neighborhoods }: DownloadPdfProps) => {
+export const DownloadPdfButton = ({ neighborhoods }: DownloadPdfProps) => {
   const handleDownload = async () => {
     if (!neighborhoods.length) return
 
