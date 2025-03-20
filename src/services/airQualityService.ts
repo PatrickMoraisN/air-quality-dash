@@ -3,11 +3,15 @@ import { airQualityServiceRoutes } from '../routes/airQualityService.routes'
 import { toTitleCase } from '../utils/stringsUtils'
 import { api } from './api'
 
+interface QualityHistoryProps {
+  [key: string]: 'bom' | 'moderado' | 'ruim' | 'péssimo'
+}
+
 interface AirQualityData {
   id: number
   name: string
   actual_quality: string
-  history: Record<string, string>
+  history: QualityHistoryProps
 }
 
 interface PaginatedResponse {
