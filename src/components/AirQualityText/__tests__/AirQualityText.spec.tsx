@@ -15,14 +15,6 @@ describe('AirQualityText Component', () => {
     expect(textElement).toBeInTheDocument()
   })
 
-  it('applies the correct styles based on air quality prop', () => {
-    render(<AirQualityText airQuality="ruim" />)
-
-    const textElement = screen.getByText('ruim')
-
-    expect(textElement).toHaveAttribute('airQuality', 'ruim')
-  })
-
   it('renders correctly with the "popup" variant', () => {
     render(<AirQualityText airQuality="péssimo" variant="popup" />)
 

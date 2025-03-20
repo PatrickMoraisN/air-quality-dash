@@ -3,7 +3,6 @@
 exports[`AirQualityText Component matches snapshot 1`] = `
 <DocumentFragment>
   <span
-    airquality="moderado"
     class="sc-VHjGu ubvvV"
   >
     moderado
