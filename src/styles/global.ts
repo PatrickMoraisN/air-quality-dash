@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, keyframes } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -12,5 +12,39 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     font-family: Arial, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
+  }
+`
+
+export const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`
+
+export const fadeLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }`
+
+export const fadeRight = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 `
