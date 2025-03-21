@@ -2,6 +2,7 @@
 import airQualityService from '@services/airQuality/airQualityApi'
 import geoDataService from '@services/geoData/geoDataApi'
 import { BairroFeature } from '@utils/geojson/geoData.types'
+import { handleAsync } from '@utils/handleAsync'
 import { FeatureCollection } from 'geojson'
 import 'leaflet/dist/leaflet.css'
 import { useEffect, useState } from 'react'
@@ -30,13 +31,19 @@ const MapComponent = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true)
 
   const getGeoData = async () => {
-    const response = await geoDataService.getGeoDataJSON()
+    const response = await handleAsync(async () => {
+      return geoDataService.getGeoDataJSON()
+    })
+    if (!response) return
     setGeoData(response as FeatureCollection)
     setIsLoading(false)
   }
 
   const getNeighborhoodInfo = async (selectedNeighborhoodName: string) => {
-    const response = await airQualityService.searchNeighborhoodByName(selectedNeighborhoodName)
+    const response = await handleAsync(async () => {
+      return airQualityService.searchNeighborhoodByName(selectedNeighborhoodName)
+    })
+    if (!response) return
     return response[0]
   }
 
@@ -46,6 +53,7 @@ const MapComponent = () => {
         click: async () => {
           const neighborhoodName = feature.properties.NOME
           const neighborhoodData = await getNeighborhoodInfo(neighborhoodName)
+          if (!neighborhoodData) return
           setSelectedNeighborhood(neighborhoodData)
           setIsPopupOpen(true)
         },
