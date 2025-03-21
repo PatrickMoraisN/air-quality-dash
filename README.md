@@ -23,7 +23,7 @@
 
 Air Quality Dashboard é um painel interativo permitindo monitoramento da qualidade do ar nos bairros da cidade. O projeto exibe os dados de forma clara oferecendo recursos como um mapa interativo, filtros e um histórico de medições.
 
-<a href="https://air-quality-clien-prod-git-master-patrickmoraisns-projects.vercel.app/" target="_blank">Veja o projeto Online!</a>
+### <a href="https://air-quality-clien-prod-git-master-patrickmoraisns-projects.vercel.app/" target="_blank">Veja o projeto Online!</a>
 
 <br />
 
@@ -74,13 +74,13 @@ O projeto foi desenvolvido utilizando algumas tecnologias modernas:
 
 # Como Executar o Projeto
 
-<a href="https://air-quality-clien-prod-git-master-patrickmoraisns-projects.vercel.app/" target="_blank">Veja o projeto Online!</a>
+### <a href="https://air-quality-clien-prod-git-master-patrickmoraisns-projects.vercel.app/" target="_blank">Veja o projeto Online!</a>
 
 ### 🔧 Requisitos
 
-Esse projeto utiliza a versão `20.19.0` do Node, como está especificado no `.nvmrc`
+⚠️🚨 <b>Atenção</b>: Esse projeto utiliza a versão `20.19.0` do Node, como está especificado no `.nvmrc`. 🚨⚠️
 
-`npm` ou `yarn`
+Use `npm` ou `yarn`
 
 ---
 
@@ -234,7 +234,7 @@ Testes para garantir a confiabilidade da aplicação. Os principais testes cobre
 
 # Mídias e Funcionalidades
 
-<a href="https://air-quality-clien-prod-git-master-patrickmoraisns-projects.vercel.app/" target="_blank">Veja o projeto Online!</a>
+### <a href="https://air-quality-clien-prod-git-master-patrickmoraisns-projects.vercel.app/" target="_blank">Veja o projeto Online!</a>
 
 ### Mapa Iterativo
 
