@@ -1,5 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import airQualityAPI from '@services/airQuality'
+import { handleAsync } from '@utils/handleAsync'
 import { searchSchema, SearchSchemaType } from '@validations/searchSchema'
 import { useCallback, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -49,13 +50,19 @@ export function ListComponent() {
 
   const handleSearch = async (data: { searchInput: string }) => {
     setIsLoading(true)
-    const neighborhoods = await airQualityAPI.searchNeighborhoodByName(data.searchInput)
+    const neighborhoods = await handleAsync(async () => {
+      return airQualityAPI.searchNeighborhoodByName(data.searchInput)
+    })
+    if (!neighborhoods) return
     setSearchedNeighborhoods(neighborhoods)
     setIsLoading(false)
   }
 
   const getFirstNeighborhoods = useCallback(async () => {
-    const data = await airQualityAPI.getNeighborhoodPaginated(1)
+    const data = (await handleAsync(async () => {
+      return airQualityAPI.getNeighborhoodPaginated(1)
+    })) as { data: SearchedNeighborhoodProps[]; total: number } | null
+    if (!data) return
     setSearchedNeighborhoods(data.data)
     setTotalPages(data.total)
     setIsLoading(false)
@@ -63,8 +70,12 @@ export function ListComponent() {
 
   const onPageChange = async ({ page }: OnPageChangeProps) => {
     if (!qualityFilters.length) {
-      const data = await airQualityAPI.getNeighborhoodPaginated(page)
-      setSearchedNeighborhoods(data.data)
+      const data = await handleAsync(async () => {
+        return airQualityAPI.getNeighborhoodPaginated(page)
+      })
+      if (data) {
+        setSearchedNeighborhoods(data.data)
+      }
       return
     }
     filterByQuality({ qualityFilters, page })
@@ -99,10 +110,10 @@ export function ListComponent() {
   }
 
   const filterByQuality = async ({ qualityFilters, page = 1 }: FilterByQualityProps) => {
-    const neighborhoodsFiltered = await airQualityAPI.getNeighborhoodsFilteredPaginated(
-      qualityFilters,
-      page
-    )
+    const neighborhoodsFiltered = await handleAsync(async () => {
+      return airQualityAPI.getNeighborhoodsFilteredPaginated(qualityFilters, page)
+    })
+    if (!neighborhoodsFiltered) return
     setSearchedNeighborhoods(neighborhoodsFiltered.data)
     setTotalPages(neighborhoodsFiltered.total)
   }
